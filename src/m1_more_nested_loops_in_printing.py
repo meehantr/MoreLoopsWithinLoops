@@ -3,8 +3,8 @@ This project demonstrates NESTED LOOPS (i.e., loops within loops)
 in the context of PRINTING on the CONSOLE.
 
 Authors: David Mutchler, Valerie Galluzzi, Mark Hays, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues and Thomas Meehan.
+"""  # done: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 
 def main():
@@ -55,7 +55,7 @@ def triangle_right_justified(r):
     For purposes of "lining up", assume r is a single digit.
     """
     # ------------------------------------------------------------------
-    # TODO: 2. Implement and test this function.
+    # done: 2. Implement and test this function.
     #          Some tests are already written for you (above).
     #
     # HINT: Do the following problem FIRST, then convert x's to spaces:
@@ -73,6 +73,17 @@ def triangle_right_justified(r):
     #   in this or the other problems in this module, as doing so would
     #   defeat the goal of providing practice at loops within loops.
     # ------------------------------------------------------------------
+    for i in range(r):
+        number_of_spaces = r - (i + 1)
+        str_to_start = ''
+        for k in range(number_of_spaces):
+            str_to_start = str_to_start + ' '
+        str_to_add = ''
+        for j in range(i + 1):
+            str_to_add = str_to_add + str((j + 1))
+        str_to_print = str_to_start + str_to_add
+
+        print(str_to_print)
 
 
 def run_test_triangle_upside_down():
@@ -109,7 +120,7 @@ def triangle_upside_down(r):
     For purposes of "lining up", assume r is a single digit.
     """
     # ------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # done: 3. Implement and test this function.
     #          Some tests are already written for you (above).
     #
     # IMPLEMENTATION RESTRICTION:
@@ -117,6 +128,17 @@ def triangle_upside_down(r):
     #   in this or the other problems in this module, as doing so would
     #   defeat the goal of providing practice at loops within loops.
     # ------------------------------------------------------------------
+    for i in range(r):
+        number_of_spaces = i
+        str_to_start = ''
+        for k in range(number_of_spaces):
+            str_to_start = str_to_start + ' '
+        str_to_add = ''
+        for j in range(r - number_of_spaces):
+            str_to_add = str_to_add + str((j + 1))
+        str_to_print = str_to_start + str_to_add
+
+        print(str_to_print)
 
 
 def run_test_vee():
@@ -160,7 +182,7 @@ def vee(r):
     For purposes of "lining up", assume r is a single digit.
     """
     # ------------------------------------------------------------------
-    # TODO: 4. Implement and test this function.
+    # done: 4. Implement and test this function.
     #          Some tests are already written for you (above).
     #
     # IMPLEMENTATION RESTRICTION:
@@ -168,6 +190,21 @@ def vee(r):
     #   in this or the other problems in this module, as doing so would
     #   defeat the goal of providing practice at loops within loops.
     # ------------------------------------------------------------------
+    for i in range(r):
+        number_of_spaces = i
+        str_to_start = ''
+        for j in range(number_of_spaces):
+            str_to_start = str_to_start + ' '
+        str_to_add = ''
+        for k in range(r - number_of_spaces):
+            str_to_add = str_to_add + str(k + 1)
+        beginning_string = str_to_start + str_to_add
+        final_string = beginning_string + '-'
+        reverse_string = ''
+        for l in range(len(beginning_string) - 1, -1, -1):
+            reverse_string = reverse_string + str(beginning_string[l])
+        final_string = final_string + reverse_string
+        print(final_string)
 
 
 def run_test_numbers_constant_forward():
@@ -216,7 +253,7 @@ def numbers_constant_forward(r, maxnum, n):
     Preconditions:  r, maxnum and n are positive integers.
     """
     # ------------------------------------------------------------------
-    # TODO: 5. Implement and test this function.
+    # done: 5. Implement and test this function.
     #          Some tests are already written for you (above).
     #
     # HINT: What loop structure do you need for this problem?
@@ -226,6 +263,16 @@ def numbers_constant_forward(r, maxnum, n):
     #   in this or the other problems in this module, as doing so would
     #   defeat the goal of providing practice at loops within loops.
     # ------------------------------------------------------------------
+    for i in range(r):
+        list_of_strings_of_numbers = ''
+        for k in range(maxnum):
+
+            str_of_numbers = ''
+            for j in range(n):
+                str_of_numbers = str_of_numbers + str(k + 1)
+            str_of_numbers = str_of_numbers + ' '
+            list_of_strings_of_numbers = list_of_strings_of_numbers + str_of_numbers
+        print(list_of_strings_of_numbers)
 
 
 def run_test_numbers_constant_backwards():
@@ -260,7 +307,7 @@ def numbers_constant_backwards(r, maxnum, n):
     Preconditions:  r, maxnum and n are positive integers.
     """
     # ------------------------------------------------------------------
-    # TODO: 6. Implement and test this function.
+    # done: 6. Implement and test this function.
     #          Some tests are already written for you (above).
     #
     # IMPLEMENTATION RESTRICTION:
@@ -268,6 +315,16 @@ def numbers_constant_backwards(r, maxnum, n):
     #   in this or the other problems in this module, as doing so would
     #   defeat the goal of providing practice at loops within loops.
     # ------------------------------------------------------------------
+    for i in range(r):
+        list_of_strings_of_numbers = ''
+        for k in range(maxnum, -1, -1):
+
+            str_of_numbers = ''
+            for j in range(n):
+                str_of_numbers = str_of_numbers + str(k)
+            str_of_numbers = str_of_numbers + ' '
+            list_of_strings_of_numbers = list_of_strings_of_numbers + str_of_numbers
+        print(list_of_strings_of_numbers)
 
 
 def run_test_numbers_increasing_forward():
@@ -312,7 +369,7 @@ def numbers_increasing_forward(r, maxnum):
     Preconditions:  r and maxnum are positive integers.
     """
     # ------------------------------------------------------------------
-    # TODO: 7. Implement and test this function.
+    # : 7.done Implement and test this function.
     #          Some tests are already written for you (above).
     #
     # IMPLEMENTATION RESTRICTION:
@@ -320,6 +377,15 @@ def numbers_increasing_forward(r, maxnum):
     #   in this or the other problems in this module, as doing so would
     #   defeat the goal of providing practice at loops within loops.
     # ------------------------------------------------------------------
+    for i in range(r):
+        list_of_strings = ''
+        for j in range(maxnum):
+            strings = ''
+            for k in range(j + 1):
+                strings = strings + str(j + 1)
+            strings = strings + ' '
+            list_of_strings = list_of_strings + strings
+        print(list_of_strings)
 
 
 # ----------------------------------------------------------------------
