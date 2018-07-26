@@ -168,19 +168,19 @@ def largest_negative_number(seq_seq):
     # ------------------------------------------------------------------
     import math
 
-    largest_negative_number = 10000
+    largest_neg_number = 10000
     for i in range(len(seq_seq)):
-        sequence_to_check = seq_seq[i]
-        for j in range(len(sequence_to_check)):
-            if sequence_to_check[j] < 0 & int(math.fabs(sequence_to_check[j])) \
-                    < \
-                    largest_negative_number:
-                largest_negative_number = sequence_to_check[j]
 
-    if largest_negative_number == 10000:
+        for j in range(len(seq_seq[i])):
+            if seq_seq[i][j] < 0 & int(math.fabs(seq_seq[i][j])) \
+                    < \
+                    largest_neg_number:
+                largest_neg_number = seq_seq[i][j]
+
+    if largest_neg_number == 10000:
         return None
 
-    return largest_negative_number
+    return largest_neg_number
 
 
 def run_test_first_is_elsewhere_too():
